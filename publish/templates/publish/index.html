@@ -1,8 +1,13 @@
-<form action="/" method="POST">
-    {% csrf_token %}
-    {{form.title}}
-    {{form.author}}
-    {{form.slug }}
-    {{form.body}}
-    <input type="submit" name="Create">
-</form>
+{% extends 'publish/base.html' %}
+{% block content %}
+<div class="container">
+    <form action="/" method="POST">
+        <input type="submit" name="Create" class="button is-primary is-end is-pulled-right" style="margin-bottom:0.5em;margin-top:0.5em;">
+        {% csrf_token %}
+        {{form.title}}
+        {{form.author}}
+        {{form.slug }}
+        {{form.body}}
+    </form>
+</div>
+{% endblock %}
